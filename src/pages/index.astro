@@ -1,17 +1,17 @@
 ---
-import PageLayout from '../layouts/BaseLayout.astro'
-import Section from '../components/Section.astro'
-import Card from '../components/Card.astro'
-import ProjectCard from '../components/ProjectCard.astro'
-import Label from '../components/Label.astro'
-import SkillLayout from '../components/SkillLayout.astro'
 import PostPreview from '@/components/blog/PostPreview.astro'
+import Card from '../components/Card.astro'
+import Label from '../components/Label.astro'
+import ProjectCard from '../components/ProjectCard.astro'
+import Section from '../components/Section.astro'
+import SkillLayout from '../components/SkillLayout.astro'
+import PageLayout from '../layouts/BaseLayout.astro'
 
 import { Image } from 'astro:assets'
 
-import { getAllPosts, sortMDByDate } from '@/utils'
-import { siteConfig } from '@/site-config'
 import arga from '@/assets/arga.png'
+import { siteConfig } from '@/site-config'
+import { getAllPosts, sortMDByDate } from '@/utils'
 
 const languages = ['Indonesia [native]', 'English']
 const frontend = [
@@ -92,9 +92,7 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS)
 				<Section title='Posts'>
 					<ul class='flex flex-col gap-y-2'>
 						{allPostsByDate.map((p) => (
-							<li class='flex flex-col gap-x-2 sm:flex-row'>
-								<PostPreview post={p} />
-							</li>
+							<li class='flex flex-col gap-x-2 sm:flex-row'>{/* <PostPreview post={p} /> */}</li>
 						))}
 					</ul>
 				</Section>
